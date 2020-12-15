@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.call.OutGoingInvitationActivity">
+
+    <data />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/accent_blue">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/outgoing_caller_avatar"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:src="@drawable/ic_avatar_default"
+            app:layout_constraintBottom_toTopOf="@+id/guideline2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25" />
+
+        <TextView
+            android:id="@+id/outgoing_caller_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="My Number"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/outgoing_caller_avatar" />
+
+        <TextView
+            android:id="@+id/outgoing_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/outgoing_message"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/outgoing_caller_name" />
+
+        <ImageView
+            android:id="@+id/outgoing_speaker"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginHorizontal="25dp"
+            android:background="@drawable/button_circular"
+            android:backgroundTint="@color/black_overlay"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="12dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_baseline_speaker"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/outgoing_end"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/outgoing_end"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginHorizontal="25dp"
+            android:background="@drawable/button_circular"
+            android:backgroundTint="@color/accent_red"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="15dp"
+            android:rotation="135.0"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_baseline_local_phone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            app:tint="@color/white" />
+
+
+        <ImageView
+            android:id="@+id/outgoing_micro"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginHorizontal="25dp"
+            android:background="@drawable/button_circular"
+            android:backgroundTint="@color/black_overlay"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="12dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_baseline_mic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/outgoing_end"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/tv_speaker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Speaker"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/outgoing_end"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/outgoing_speaker" />
+
+        <TextView
+            android:id="@+id/tv_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="End call"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/outgoing_end" />
+
+        <TextView
+            android:id="@+id/tv_microphone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Mute"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/outgoing_end"
+            app:layout_constraintTop_toBottomOf="@+id/outgoing_micro" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.65" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

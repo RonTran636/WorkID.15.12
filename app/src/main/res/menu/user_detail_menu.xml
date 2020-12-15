@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.myapplication.ScrollingActivity">
+    <item
+        android:id="@+id/action_call"
+        android:orderInCategory="50"
+        android:title="Call"
+        android:icon="@drawable/ic_baseline_local_phone"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_video_call"
+        android:orderInCategory="75"
+        android:title="Video Call"
+        android:icon="@drawable/ic_baseline_videocam"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+</menu>

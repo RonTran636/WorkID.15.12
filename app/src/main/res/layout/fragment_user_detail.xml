@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+
+        tools:context=".activities.userDetails.UserDetailActivity"
+        android:id="@+id/motion_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false"
+        android:background="@color/accent_white">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/app_bar_height"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <com.workid.utils.CollapsibleToolbar
+                android:id="@+id/collapsing_tool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/app_bar_height"
+                android:fitsSystemWindows="true"
+                android:minHeight="@dimen/user_info_container_medium"
+                app:layout_scrollFlags="scroll|enterAlways|snap|exitUntilCollapsed"
+                app:layoutDescription="@xml/activity_user_detail_scene"
+                app:toolbarId="@+id/toolbar">
+
+                <androidx.constraintlayout.utils.widget.ImageFilterView
+                    android:id="@+id/user_avatar"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/temp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/user_name"
+                    android:textColor="@color/accent_black"
+                    android:textSize="@dimen/user_name_large"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintBottom_toTopOf="@+id/user_last_seen"
+                    app:layout_constraintStart_toStartOf="@+id/user_avatar" />
+
+                <TextView
+                    android:id="@+id/user_last_seen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_last_seen"
+                    android:layout_margin="16dp"
+                    android:textSize="@dimen/user_last_seen_large"
+                    app:layout_constraintBottom_toBottomOf="@+id/user_avatar"
+                    app:layout_constraintStart_toStartOf="@+id/user_avatar" />
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_collapseMode="pin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:popupTheme="@style/Theme.MyApplication.PopupOverlay" />
+
+            </com.workid.utils.CollapsibleToolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <include layout="@layout/user_detail_call_history_scrolling" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

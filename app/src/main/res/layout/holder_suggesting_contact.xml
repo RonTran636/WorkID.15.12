@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/holder_suggesting_contact_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="@dimen/holder_margin"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="@dimen/holder_margin"
+        android:padding="4dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/holder_contact_avatar_container"
+            android:layout_width="@dimen/user_avatar_size"
+            android:layout_height="@dimen/user_avatar_size"
+            android:src="@drawable/ic_avatar_default"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.WorkId.CornerSize50Percent" />
+
+        <TextView
+            android:id="@+id/holder_contact_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/user_name"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/holder_contact_avatar_container"
+            app:layout_constraintTop_toTopOf="@+id/holder_contact_avatar_container" />
+
+        <TextView
+            android:id="@+id/holder_contact_workid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/roboto_regular"
+            android:maxLength="17"
+            android:text="@string/work_id"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/holder_contact_avatar_container"
+            app:layout_constraintStart_toEndOf="@+id/holder_contact_avatar_container"
+            app:layout_constraintTop_toBottomOf="@id/holder_contact_name" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/holder_action_add"
+            android:layout_width="@dimen/default_action_size"
+            android:layout_height="@dimen/default_action_size"
+            android:layout_margin="@dimen/default_margin"
+            android:adjustViewBounds="true"
+            android:background="@drawable/button_circular"
+            android:backgroundTint="@color/default_green_25"
+            android:padding="4dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_baseline_add_24"
+            app:layout_constraintBottom_toBottomOf="@+id/holder_contact_avatar_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/holder_contact_avatar_container"
+            app:tint="@color/default_green" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_color">@color/md_grey_800</color>
+    <color name="button_google">@color/md_grey_800</color>
+    <color name="button_facebook">@color/md_grey_800</color>
+    <color name="button_create_account">@color/md_grey_800</color>
+    <color name="forgot_password">@color/md_grey_400</color>
+    <color name="text_color">@color/white</color>
+
+</resources>

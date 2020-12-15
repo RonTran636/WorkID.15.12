@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/holder_contact_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginBottom="@dimen/default_margin">
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/appCompatCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/holder_contact_avatar_container"
+            android:layout_width="@dimen/user_avatar_size"
+            android:layout_height="@dimen/user_avatar_size"
+            android:layout_marginStart="@dimen/default_margin"
+            android:src="@drawable/ic_avatar_default"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatCheckBox"
+            app:layout_constraintStart_toEndOf="@+id/appCompatCheckBox"
+            app:layout_constraintTop_toTopOf="@+id/appCompatCheckBox" />
+
+        <TextView
+            android:id="@+id/holder_contact_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/user_name"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/holder_contact_avatar_container"
+            app:layout_constraintTop_toTopOf="@+id/holder_contact_avatar_container"
+            app:layout_goneMarginStart="@dimen/default_margin" />
+
+        <TextView
+            android:id="@+id/holder_contact_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/roboto_regular"
+            android:maxLength="17"
+            android:text="@string/user_email"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/holder_contact_avatar_container"
+            app:layout_constraintStart_toStartOf="@+id/holder_contact_name"
+            app:layout_constraintTop_toBottomOf="@id/holder_contact_name" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/holder_call"
+            android:layout_width="@dimen/default_action_size"
+            android:layout_height="@dimen/default_action_size"
+            android:layout_marginEnd="@dimen/holder_margin"
+            android:background="@drawable/button_circular"
+            android:backgroundTint="@color/primary_color_35_percent"
+            android:padding="8dp"
+            android:src="@drawable/ic_baseline_local_phone"
+            app:layout_constraintBottom_toBottomOf="@+id/holder_contact_avatar_container"
+            app:layout_constraintEnd_toStartOf="@+id/holder_video_call"
+            app:layout_constraintTop_toTopOf="@+id/holder_contact_avatar_container"
+            app:tint="@color/primary_color" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/holder_video_call"
+            android:layout_width="@dimen/default_action_size"
+            android:layout_height="@dimen/default_action_size"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:background="@drawable/button_circular"
+            android:backgroundTint="@color/primary_color_35_percent"
+            android:padding="8dp"
+            android:src="@drawable/ic_baseline_videocam"
+            app:layout_constraintBottom_toBottomOf="@+id/holder_contact_avatar_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/holder_contact_avatar_container"
+            app:tint="@color/primary_color" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

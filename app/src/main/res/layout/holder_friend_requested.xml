@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/holder_contact_container"
+    android:layout_width="match_parent"
+    android:layout_marginTop="@dimen/holder_margin"
+    android:layout_marginBottom="@dimen/holder_margin"
+    android:padding="4dp"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/holder_contact_avatar_container"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="@dimen/default_margin"
+        android:src="@drawable/ic_avatar_default"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/holder_contact_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/user_name"
+        android:textSize="18sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="@dimen/default_margin"
+        app:layout_constraintStart_toEndOf="@+id/holder_contact_avatar_container"
+        app:layout_constraintTop_toTopOf="@+id/holder_contact_avatar_container" />
+
+    <TextView
+        android:id="@+id/holder_contact_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:maxLength="17"
+        android:layout_marginTop="4dp"
+        android:text="@string/user_email"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/holder_contact_avatar_container"
+        app:layout_constraintStart_toStartOf="@+id/holder_contact_name"
+        app:layout_constraintTop_toBottomOf="@id/holder_contact_name" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/holder_call"
+        android:layout_width="@dimen/default_action_size"
+        android:layout_height="@dimen/default_action_size"
+        android:padding="6dp"
+        android:background="@drawable/button_circular"
+        android:backgroundTint="@color/default_green_25"
+        android:src="@drawable/ic_baseline_check_24"
+        android:layout_marginEnd="@dimen/holder_margin"
+        app:layout_constraintBottom_toBottomOf="@+id/holder_contact_avatar_container"
+        app:layout_constraintEnd_toStartOf="@+id/holder_video_call"
+        app:layout_constraintTop_toTopOf="@+id/holder_contact_avatar_container"
+        app:tint="@color/default_green" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/holder_video_call"
+        android:layout_width="@dimen/default_action_size"
+        android:layout_height="@dimen/default_action_size"
+        android:layout_margin="@dimen/default_margin"
+        android:background="@drawable/button_circular"
+        android:backgroundTint="@color/color_background_grey"
+        android:padding="6dp"
+        android:src="@drawable/ic_baseline_clear_24"
+        app:layout_constraintBottom_toBottomOf="@+id/holder_contact_avatar_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/holder_contact_avatar_container"
+        app:tint="@color/clear_button" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@+id/start"
+        motion:duration="1000"
+        motion:motionInterpolator="linear">
+        <OnSwipe
+            motion:touchAnchorId="@layout/activity_user_detail"
+            motion:dragDirection="dragUp"/>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+
+        <Constraint
+            android:id="@+id/user_avatar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.0"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute motion:attributeName="roundPercent"
+                motion:customFloatValue="0"/>
+        </Constraint>
+
+        <Constraint
+            android:id="@id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/user_name"
+            android:textColor="@color/accent_white"
+            motion:autoSizeTextType="uniform"
+            motion:layout_constraintBottom_toTopOf="@id/user_last_seen"
+            motion:layout_constraintStart_toStartOf="@+id/user_avatar"/>
+
+       <Constraint android:id="@+id/user_last_seen"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginStart="16dp"
+           android:textColor="@color/accent_white"
+           android:text="@string/user_last_seen"
+           motion:layout_constraintBottom_toBottomOf="@+id/user_avatar"
+           motion:layout_constraintStart_toStartOf="@+id/user_avatar"/>
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+        <Constraint
+            android:id="@+id/user_avatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_circular"
+            motion:layout_constraintTop_toTopOf="@id/user_name"
+            motion:layout_constraintStart_toStartOf="parent" >
+            <CustomAttribute motion:attributeName="roundPercent"
+                motion:customFloatValue="50"/>
+        </Constraint>
+
+        <Constraint
+            android:id="@id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/user_name"
+            android:textColor="@color/accent_white"
+            motion:autoSizeTextType="uniform"
+            motion:layout_constraintStart_toEndOf="@id/user_avatar"
+            motion:layout_constraintBottom_toTopOf="@id/user_last_seen">
+        </Constraint>
+
+        <Constraint android:id="@+id/user_last_seen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/accent_white"
+            android:text="@string/user_last_seen"
+            motion:layout_constraintStart_toEndOf="@id/user_avatar"
+            motion:layout_constraintBottom_toBottomOf="parent">
+
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/toolbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            motion:layout_constraintBottom_toTopOf="@+id/user_name"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent" />
+
+    </ConstraintSet>
+</MotionScene>
